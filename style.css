@@ -1,0 +1,108 @@
+/* Sunrise Therapeutic Services — plain CSS, no build step. Colors and font taken from the live GoDaddy page. */
+:root {
+  --ink: #161616;
+  --muted: #5e5e5e;
+  --accent: #effd78;      /* the yellow-green button */
+  --olive: #747a3a;
+  --bg: #ffffff;
+  --soft: #f5f5f3;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  font-size: 16px;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--olive); }
+
+/* Hero: the sand photo, logo on a soft dark band so the white logo reads */
+.hero {
+  min-height: min(92vh, 820px);
+  background: url("images/hero-sand.jpg") center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+.topbar {
+  background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,0));
+  padding: 16px 24px 32px;
+}
+.logo img { height: 64px; width: auto; }
+.hero-text {
+  margin: auto 0;
+  padding: 24px clamp(16px, 6vw, 80px) 64px;
+  max-width: 640px;
+}
+.label {
+  display: inline;
+  background: var(--ink);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: 12px;
+  line-height: 2.2;
+  padding: 4px 8px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+h1 { margin: 16px 0 28px; font-weight: 400; }
+h1 span {
+  background: #fff;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: clamp(26px, 4.5vw, 44px);
+  line-height: 1.5;
+  padding: 2px 8px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--ink);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 14px 28px;
+  border-radius: 999px;
+}
+.button:hover, .button:focus { filter: brightness(.95); }
+
+/* Sections */
+section { padding: 56px 16px; max-width: 1100px; margin: 0 auto; }
+.section-title { text-align: center; margin: 0 0 32px; font-weight: 400; }
+.section-title span {
+  background: var(--ink);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  font-size: 15px;
+  padding: 6px 14px;
+  display: inline-block;
+}
+h3 { font-weight: 400; font-size: 20px; margin: 0 0 12px; }
+.about { display: grid; gap: 32px; align-items: start; }
+.about-text { text-align: center; color: var(--muted); font-size: 15px; }
+.about-text h3 { color: var(--ink); }
+.about-text strong { color: var(--ink); }
+.soon { background: var(--soft); text-align: center; padding: 18px; color: var(--muted); }
+
+.contact { display: grid; gap: 40px; }
+.contact h3 { margin-top: 20px; }
+.hours { border-collapse: collapse; color: var(--muted); }
+.hours td { padding: 2px 16px 2px 0; }
+
+footer { text-align: center; color: var(--muted); font-size: 13px; padding: 32px 16px 48px; }
+
+@media (min-width: 760px) {
+  .about { grid-template-columns: 1fr 1fr; }
+  .contact { grid-template-columns: 1fr 1fr; }
+  .logo img { height: 80px; }
+}
